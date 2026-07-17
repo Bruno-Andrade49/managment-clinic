@@ -163,6 +163,7 @@
 
 <script setup lang="ts">
 definePageMeta({ middleware: 'auth' })
+useHead({ title: 'Detalhes do Paciente' })
 
 const route = useRoute()
 const supabase = useSupabaseClient()

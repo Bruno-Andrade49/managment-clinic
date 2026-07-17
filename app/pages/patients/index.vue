@@ -114,6 +114,7 @@
 
 <script setup lang="ts">
 definePageMeta({ middleware: 'auth' })
+useHead({ title: 'Pacientes' })
 
 const supabase = useSupabaseClient()
 

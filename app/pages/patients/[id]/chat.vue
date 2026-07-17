@@ -112,6 +112,7 @@
 
 <script setup lang="ts">
 definePageMeta({ middleware: 'auth' })
+useHead({ title: 'Chat com IA' })
 
 const route = useRoute()
 const supabase = useSupabaseClient()

@@ -84,6 +84,7 @@
 
 <script setup lang="ts">
 definePageMeta({ middleware: 'auth' })
+useHead({ title: 'Assistente IA' })
 
 const supabase = useSupabaseClient()
 const patientSearch = ref('')

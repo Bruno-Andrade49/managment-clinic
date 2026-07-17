@@ -4,7 +4,7 @@
     <aside class="sidebar">
       <!-- Logo -->
       <div class="sidebar-logo">
-        <div class="sidebar-logo-icon">🩺</div>
+        <img src="/logo.svg" alt="CliniqAI" class="sidebar-logo-icon" style="width: 36px; height: 36px; border-radius: 9px;" />
         <div class="sidebar-logo-text">
           <span class="sidebar-logo-name">CliniqAI</span>
           <span class="sidebar-logo-sub">Gestão Clínica</span>

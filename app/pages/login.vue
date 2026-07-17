@@ -2,9 +2,7 @@
   <div style="width: 100%; max-width: 440px;">
     <!-- Logo -->
     <div style="text-align: center; margin-bottom: 40px;">
-      <div style="width: 64px; height: 64px; border-radius: 18px; background: linear-gradient(135deg, #0EA5E9, #10B981); display: flex; align-items: center; justify-content: center; font-size: 32px; margin: 0 auto 16px; box-shadow: 0 0 32px rgba(14,165,233,0.4);">
-        🩺
-      </div>
+      <img src="/logo.svg" alt="CliniqAI" style="width: 64px; height: 64px; border-radius: 18px; margin: 0 auto 16px; display: block; box-shadow: 0 0 32px rgba(14,165,233,0.4);" />
       <h1 style="font-size: 28px; font-weight: 800; color: var(--text-primary); letter-spacing: -0.5px;">
         Bem-vindo ao <span class="gradient-text">CliniqAI</span>
       </h1>
@@ -58,6 +56,7 @@
 definePageMeta({
   layout: 'auth',
 })
+useHead({ title: 'Entrar' })
 
 const supabase = useSupabaseClient()
 const user = useSupabaseUser()
