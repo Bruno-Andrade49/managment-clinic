@@ -1,0 +1,22 @@
+{
+  "name": "ger-clinico",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@nuxtjs/supabase": "^2.0.9",
+    "@supabase/supabase-js": "^2.110.0",
+    "@tailwindcss/vite": "^4.3.2",
+    "nuxt": "^4.4.2",
+    "tailwindcss": "^4.3.2",
+    "vue": "^3.5.30",
+    "vue-router": "^5.0.4"
+  }
+}
