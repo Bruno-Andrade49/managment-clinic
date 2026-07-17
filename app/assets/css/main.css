@@ -1012,7 +1012,64 @@ body {
 /* ─── Responsive ─────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   :root {
-    --sidebar-width: 0px;
+    --sidebar-width: 260px; /* Keep var for sidebar itself */
+  }
+
+  /* Overlay */
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 95;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+
+  .app-layout.sidebar-open .sidebar-overlay {
+    display: block;
+    opacity: 1;
+  }
+
+  /* Sidebar animation */
+  .sidebar {
+    transform: translateX(-100%);
+    box-shadow: none;
+  }
+
+  .app-layout.sidebar-open .sidebar {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0,0,0,0.5);
+  }
+
+  .app-main {
+    margin-left: 0;
+  }
+
+  .topbar {
+    left: 0;
+    padding: 0 16px;
+  }
+
+  /* Mobile Button & Hiding */
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: var(--radius-sm);
+  }
+  .mobile-menu-btn:active {
+    background: rgba(255,255,255,0.1);
+  }
+
+  .hidden-mobile {
+    display: none !important;
   }
 
   .app-content {
@@ -1020,12 +1077,62 @@ body {
     padding-top: calc(var(--topbar-height) + 16px);
   }
 
+  /* Layout tweaks */
   .page-header {
     flex-direction: column;
     gap: 12px;
+    align-items: flex-start;
   }
 
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  /* Forms & Layouts */
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Table Wrapper */
+  .table-wrapper {
+    margin: 0 -16px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  /* Chat Adjustments */
+  .chat-message {
+    max-width: 90%;
+  }
+
+  .chat-messages {
+    padding: 16px;
+  }
+
+  .chat-input-area {
+    padding: 12px 16px;
+  }
+  
+  /* Modal adjustments */
+  .modal {
+    padding: 20px;
+    margin: 0;
+  }
+  .modal-overlay {
+    padding: 16px;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-btn {
+    display: none !important;
+  }
+  .sidebar-overlay {
+    display: none !important;
   }
 }

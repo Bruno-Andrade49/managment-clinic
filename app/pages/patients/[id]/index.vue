@@ -18,7 +18,7 @@
           </div>
         </div>
       </div>
-      <div style="display: flex; gap: 10px;">
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
         <NuxtLink :to="`/patients/${patient.id}/chat`" class="btn btn-accent">
           🤖 Consultar IA
         </NuxtLink>
@@ -32,7 +32,7 @@
     </div>
 
     <!-- Info Grid -->
-    <div style="display: grid; grid-template-columns: 300px 1fr; gap: 24px; align-items: start;">
+    <div class="patient-grid">
 
       <!-- Left column: Patient info -->
       <div style="display: flex; flex-direction: column; gap: 16px;">
@@ -153,13 +153,28 @@
   <div v-else-if="loading" class="animate-fade-in">
     <div style="display: flex; flex-direction: column; gap: 24px;">
       <div class="skeleton" style="height: 80px; border-radius: 16px;"></div>
-      <div style="display: grid; grid-template-columns: 300px 1fr; gap: 24px;">
+      <div class="patient-grid">
         <div class="skeleton" style="height: 300px; border-radius: 16px;"></div>
         <div class="skeleton" style="height: 300px; border-radius: 16px;"></div>
       </div>
     </div>
   </div>
 </template>
+
+<style>
+.patient-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .patient-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 
 <script setup lang="ts">
 definePageMeta({ middleware: 'auth' })

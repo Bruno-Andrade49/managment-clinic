@@ -20,7 +20,7 @@
         <h2 style="font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
           <span>👤</span> Dados Pessoais
         </h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="grid grid-cols-2 gap-4">
           <div class="form-group" style="grid-column: 1 / -1;">
             <label class="form-label">Nome Completo *</label>
             <input
